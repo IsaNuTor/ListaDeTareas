@@ -5,13 +5,13 @@
 
 body {
     margin: 0;
-    min-height: 500px;
+    min-height: 700px;
     height: 100vh;
-    /*background: radial-gradient(ellipse farthest-corner at center top, #f28f60 0%, #f04d5c 100%);*/
-    background: radial-gradient(ellipse farthest-corner at center top, #08bce0 0%, #053149 100%);
-    /*background: no-repeat;*/
     color: #fff;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /*background: linear-gradient(45deg, #63c4c9, #ad2550);*/
+    /*background: radial-gradient(ellipse farthest-corner at center top, #f28f60 0%, #f04d5c 100%);*/
+    background: radial-gradient(ellipse farthest-corner at center top, #08bce0 0%, #053149 100%);
 }
 
 button,
@@ -27,8 +27,8 @@ main {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 350px;
-    height: 500px;
+    width: 600px;
+    height: 700px;
     border-radius: 20px;
     background: #fff;
     box-shadow: 0 7px 30px rgba(78, 12, 15, 0.3);
@@ -119,11 +119,14 @@ main {
 
 /**************Tareas***************/
 
+
+/*Contenedor de tareas*/
+
 .contenido ul.tareas {
     padding: 0 7px;
     letter-spacing: 0.5px;
     line-height: 28px;
-    height: 225px;
+    height: 420px;
     overflow: auto;
 }
 
@@ -147,7 +150,9 @@ main {
 
 .contenido input[type="checkbox"]+label {
     color: #696d78;
-    font-size: 14px;
+    /*Letra de las tareas*/
+    font-size: 16px;
+    font-weight: 500;
     cursor: pointer;
     position: relative;
     display: inline-block;
@@ -227,22 +232,71 @@ main {
 
 /*********** Responsive ************/
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 650px) {
     body {
-        min-height: 300px;
+        min-height: 350px;
     }
     main {
-        width: 300px;
-        height: 500px;
+        width: 500px;
+        height: 700px;
     }
 }
 
-@media only screen and (max-width: 300px) {
-    body {
-        min-height: 250px;
-    }
+@media only screen and (max-width: 550px) {
     main {
-        width: 250px;
-        height: 500px;
+        width: 400px;
+        height: 600px;
     }
+    .contenido ul.tareas {
+        height: 320px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    main {
+        margin-top: 7px;
+        width: 350px;
+        height: 550px;
+    }
+    .contenido ul.tareas {
+        height: 290px;
+    }
+}
+
+@media only screen and (max-width: 325px) {
+    main {
+        margin-top: 20px;
+        width: 270px;
+        height: 490px;
+    }
+    .contenido ul.tareas {
+        height: 220px;
+    }
+    .contenedorBtn {
+        width: 53%;
+    }
+}
+
+
+/************ Botón que cambia el fondo de color ************/
+
+.contenedorBtn {
+    z-index: 10;
+    background-color: transparent;
+    position: fixed;
+    top: -5%;
+    /*Distancia del botón, 0% solaparia con la lista de tareas un poco*/
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 7px 30px rgba(78, 12, 15, 0.3);
+}
+
+#btn-color {
+    /*margin: 0 auto;*/
+    padding: 12px;
+    border-radius: 20px;
+    /*Pegarlo al borde derecho*/
+    background-color: #067593;
+    color: #fff;
+    cursor: pointer;
 }

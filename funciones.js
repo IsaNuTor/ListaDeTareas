@@ -83,3 +83,30 @@ function borrarDeLista(t) {
 }
 
 listaTareas.addEventListener('click', borrarDeLista);
+
+/*************Cambiar color de fondo con un botón***************/
+
+// Probar con un único color
+/*function btnCambiarColor() {
+    let fondo = document.getElementById("body").style.background = "linear-gradient(45deg, #09c4d9, #8e0d47)";
+    let fondoBtn = document.getElementById("btn-color").style.background = "red";
+    let colorLetraBtn = document.getElementById("btn-color").style.color = "gold";
+}*/
+
+// Declaramos un array con los colores que queremos de fondo y del botón y la letra del mismo
+let colorFondo = ["radial-gradient(ellipse farthest-corner at center top, #08bce0 0%, #053149 100%)", "linear-gradient(45deg, #63c4c9, #ad2550)", "radial-gradient(ellipse farthest-corner at center top, #f28f60 0%, #f04d5c 100%)", "radial-gradient(ellipse farthest-corner at center top, #0fd083 0%, #1c7c0e 100%)", "linear-gradient(45deg, #000000, #8b8b8b)"];
+let colorFondoBtn = ["#067593", "#b61f4d", "#ee3e39", "#13792b", "#151515"];
+//let colorFondoLetraBtn = ["fff", "fff", "", "", "#fff"];
+
+let i = 1;
+
+function btnCambiarColor() {
+
+    let fondo = document.getElementById("body").style.background = colorFondo[i];
+    let fondoBtn = document.getElementById("btn-color").style.background = colorFondoBtn[i];
+    //let colorLetraBtn = document.getElementById("btn-color").style.color = colorFondoLetraBtn[i];
+
+    if (i < colorFondo.length - 1) i++;
+    else i = 0;
+
+}
